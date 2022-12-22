@@ -89,10 +89,10 @@
         <!-- Card Admin -->
         <div class="row">
 
-            <div class="col-lg-5 col-md-12 col-12 col-sm-12">
+            <div class="col-lg-4 col-md-12 col-12 col-sm-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Admin Info</h4>
+                        <h4>Admin</h4>
                     </div>
                     <div class="card-body">
                         <ul class="list-unstyled list-unstyled-border">
@@ -100,11 +100,29 @@
                                 <li class="media">
                                     <img class="mr-3 rounded-circle" width="50" src="<?= base_url('assets/img/profile/') . $a['image']; ?>" alt="avatar">
                                     <div class="media-body">
-                                        <?php if ($a['email'] == $this->session->userdata('email')) : ?>
-                                            <div class="float-right text-primary">Online</div>
-                                        <?php endif; ?>
                                         <div class="media-title"><?= $a['name'] ?></div>
                                         <span class="text-small text-muted"><?= date('d F Y', $a['date_created']); ?></span>
+                                    </div>
+                                </li>
+                            <?php endforeach ?>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-12 col-12 col-sm-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Member</h4>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-unstyled list-unstyled-border">
+                            <?php foreach ($member as $m) : ?>
+                                <li class="media">
+                                    <figure class="mr-3 rounded-circle avatar" width="50" alt="avatar" data-initial="<?= strtoupper(substr($m['name'], 0, 2)) ?>"></figure>
+                                    <div class="media-body">
+                                        <div class="media-title"><?= $m['name'] ?></div>
+                                        <span class="text-small text-muted"><?= date('d F Y', $m['date_created']); ?></span>
                                     </div>
                                 </li>
                             <?php endforeach ?>

@@ -18,6 +18,9 @@ class Dashboard extends CI_Controller
         $data['admin'] = $this->UserModel->getUser()->result_array();
         $data['role'] = $this->db->get('role')->result_array();
 
+        $this->db->where('role', 'member');
+        $data['member'] = $this->UserModel->getUser()->result_array();
+
         $this->load->view('templates/header', $data);
         $this->load->view('templates/topbar', $data);
         $this->load->view('templates/sidebar', $data);
