@@ -64,6 +64,22 @@
                     <?php } ?>
                 </div>
 
+                <!-- Search -->
+                <form action="" method="post" class="form-inline ml-auto">
+                    <ul class="navbar-nav">
+                        <li>
+                            <a href="#" data-toggle="search" class="nav-link nav-link-lg d-sm-none"><i class="fas fa-search"></i></a>
+                        </li>
+                    </ul>
+                    <div class="search-element">
+                        <input class="form-control" type="search" placeholder="Search" aria-label="Search" data-width="250" name="keyword" autocomplete="off">
+                        <button class="btn" type="submit">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </form>
+                <!-- End Search -->
+
                 <ul class="navbar-nav navbar-right">
                     <li class="dropdown">
                         <?php

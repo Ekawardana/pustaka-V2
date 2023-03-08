@@ -117,8 +117,8 @@ class BukuModel extends CI_Model
         $this->db->delete($this->table);
         return TRUE;
     }
-
     // End Buku Model Admin 
+
 
     // Buku Model Member
     public function getBuku()
@@ -145,6 +145,16 @@ class BukuModel extends CI_Model
         $this->db->join('kategori k', 'k.id_kategori = buku.id_kategori', 'right');
         $this->db->where($where);
         return $this->db->get();
+    }
+
+    public function search($keyword = null)
+    {
+        if ($keyword = $this->input->post('keyword')) {
+            $this->db->like('judul_buku', $keyword);
+            $this->db->or_like('pengarang', $keyword);
+            $this->db->or_like('penerbit', $keyword);
+            return $this->db->get('buku')->result();
+        }
     }
 }
 

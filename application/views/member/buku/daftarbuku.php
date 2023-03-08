@@ -9,8 +9,12 @@
              <div class="row d-flex justify-content-center">
                  <div class="col-6">
                      <?= $this->session->flashdata('message'); ?>
+                     <?php if (empty($buku)) : ?>
+                         <div class="alert alert-danger alert-dismissible fade show" role="alert">Oops! Buku ga ditemukan. <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>
+                     <?php endif; ?>
                  </div>
              </div>
+
 
              <div class="row">
                  <?php foreach ($buku as $buku) : ?>

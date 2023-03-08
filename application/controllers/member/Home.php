@@ -17,6 +17,14 @@ class Home extends CI_Controller
             'buku' => $this->BukuModel->getBuku()->result(),
         ];
 
+        $keyword = $this->input->post('keyword');
+        if ($keyword) {
+            $data = [
+                'title' => "Daftar Buku",
+                'buku' => $this->BukuModel->search()
+            ];
+        }
+
         /**Untuk Tombol Info Booking**/
         $where = $this->session->userdata('id_user');
         $data['items'] = $this->db->query("select*from booking bo, booking_detail d, buku bu where d.id_booking=bo.id_booking and d.id_buku=bu.id_buku and bo.id_user='$where'")->num_rows();
