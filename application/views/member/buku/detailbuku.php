@@ -17,7 +17,7 @@
                                 <i class="fas fw fa-shopping-cart mr-2"></i>Booking
                             </a>
 
-                            <button onclick="window.history.go(-1); return true;" style="width: 20%;" class="btn btn-danger mt-2">
+                            <button onclick="window.history.go(-1); return true;" class="btn btn-danger mt-2">
                                 <i class="fas fa-undo mr-1"></i>Back
                             </button>
                         </div>
